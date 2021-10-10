@@ -18,8 +18,13 @@ const Todolist = {
                     name: '',
                     done: false,
                 }
+            } else {
+                alert("Some text is necessary");
             }
         },
+        clearAll: function() {
+            this.list = [];
+        }
     }
 };
 
