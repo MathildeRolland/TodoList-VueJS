@@ -25,10 +25,13 @@ const Todolist = {
         },
         clearAll: function() {
             this.list = [];
-        }
+        },
     },
     created: function() {
         this.list = localStorage.getItem("taskList") ? JSON.parse(localStorage.getItem("taskList")) : this.list;
+    },
+    updated: function() {
+        localStorage.setItem("taskList", JSON.stringify(this.list));
     }
 };
 
