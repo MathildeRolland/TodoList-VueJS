@@ -21,14 +21,14 @@
                 <h3>To-do List</h3>
                 
                 <div class="all-todos" v-for="item in list">
-                    <div class="single-todo">
-                        <p>{{ item }}</p>
+                    <div class="single-todo" @click="item.done = !item.done" :class="{ done: item.done }">
+                        <p>{{ item.name }}</p>
                     </div>
                 </div>
 
                 <button class="clear">Clear All</button>
 
-                <input type="text" placeholder="Add new to-do" v-model="newTask" >
+                <input type="text" placeholder="Add new to-do" v-model="newTask.name" >
                 <button class="add" @click="addNewTask()" >Add</button>
 
                 <div class="instructions">

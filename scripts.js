@@ -4,16 +4,22 @@ const Todolist = {
     data() {
         return {
             list: list,
-            newTask: ''
+            newTask: {
+                name: '',
+                done: false
+            }
         }
     },
     methods: {
         addNewTask: function() {
-            if(this.newTask) {
+            if(this.newTask.name) {
                 this.list.push(this.newTask);
-                this.newTask = '';
+                this.newTask = {
+                    name: '',
+                    done: false,
+                }
             }
-        }
+        },
     }
 };
 
