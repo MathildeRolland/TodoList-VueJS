@@ -18,6 +18,7 @@ const Todolist = {
                     name: '',
                     done: false,
                 }
+                localStorage.setItem("taskList", JSON.stringify(this.list));
             } else {
                 alert("Some text is necessary");
             }
@@ -25,6 +26,9 @@ const Todolist = {
         clearAll: function() {
             this.list = [];
         }
+    },
+    created: function() {
+        this.list = localStorage.getItem("taskList") ? JSON.parse(localStorage.getItem("taskList")) : this.list;
     }
 };
 
